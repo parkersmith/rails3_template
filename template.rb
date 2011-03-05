@@ -23,7 +23,7 @@ source "http://rubygems.org"
 
 CODE
 
-gem "rails", "3.0.0"
+gem "rails", "3.0.3"
 
 unless options[:skip_activerecord]
   if require_for_database
@@ -39,7 +39,7 @@ gem 'simple_form'
 
 gem "unicorn", :group => ["development", "test"]
 gem "shoulda", :group => "test"
-gem "factory_girl_rails", "1.0", :group => "test"
+gem "factory_girl_rails", :group => "test"
 gem "mocha", :group => "test"
 gem "capybara", :group => "test"
 gem "database_cleaner", :group => "test"
@@ -98,13 +98,13 @@ end
 
 run "curl http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js -o public/javascripts/jquery.min.js"
 run "curl http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js -o public/javascripts/jquery.js"
-run "curl http://github.com/rails/jquery-ujs/raw/master/src/rails.js -o public/javascripts/rails.js"
+run "curl https://github.com/rails/jquery-ujs/raw/master/src/rails.js -o public/javascripts/rails.js"
 
 # More generators
 generate "simple_form:install"
 
 # Setup CSS skeleton
-get "http://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "public/stylesheets/screen.css"
+get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "public/stylesheets/screen.css"
 
 # Add default README
 file 'README.markdown', <<-EOL
